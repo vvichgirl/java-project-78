@@ -14,7 +14,7 @@ public class BaseSchema<T>  {
     }
 
     public boolean isValid(T data) {
-        for(var fn : checks.values()) {
+        for (var fn : checks.values()) {
             if (!fn.test(data)) {
                 return false;
             }

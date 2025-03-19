@@ -7,7 +7,7 @@ import java.util.function.Predicate;
 
 public class BaseSchema<T>  {
     protected Map<String, Predicate<T>> checks = new LinkedHashMap<>();
-    protected boolean isRequired = false;
+    private boolean isRequired = false;
 
     public BaseSchema<T> required() {
         isRequired = true;

@@ -1,5 +1,5 @@
 plugins {
-    application
+    java
     checkstyle
     jacoco
     id("com.github.ben-manes.versions") version "0.52.0"
@@ -10,10 +10,6 @@ version = "1.0-SNAPSHOT"
 
 repositories {
     mavenCentral()
-}
-
-application {
-    mainClass.set("hexlet.code.App")
 }
 
 dependencies {

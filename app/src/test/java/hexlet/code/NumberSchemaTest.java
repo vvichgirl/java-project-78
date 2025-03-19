@@ -31,6 +31,7 @@ public class NumberSchemaTest {
         assertFalse(schema.isValid(11));
 
         var schema1 = v.number();
+        assertTrue(schema1.required().positive().range(4, 6).range(7, 15).isValid(9));
         assertFalse(schema1.required().positive().range(4, 6).range(7, 15).isValid(5));
     }
 }

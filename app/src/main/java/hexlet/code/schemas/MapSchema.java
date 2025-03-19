@@ -1,11 +1,10 @@
 package hexlet.code.schemas;
 
 import java.util.Map;
-import java.util.Objects;
 
 public final class MapSchema extends BaseSchema<Map<String, String>> {
     public MapSchema required() {
-        checks.put("required", data -> !Objects.isNull(data));
+        super.required();
         return this;
     }
 

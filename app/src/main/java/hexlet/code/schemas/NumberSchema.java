@@ -1,18 +1,17 @@
 package hexlet.code.schemas;
 
 public class NumberSchema extends BaseSchema<Integer> {
-    @Override
-    public final NumberSchema required() {
-        super.required();
+    public NumberSchema required() {
+        super.setRequired();
         return this;
     }
 
-    public final NumberSchema positive() {
+    public NumberSchema positive() {
         checks.put("positive", data -> data > 0);
         return this;
     }
 
-    public final NumberSchema range(int min, int max) {
+    public NumberSchema range(int min, int max) {
         checks.put("range", data -> data >= min && data <= max);
         return this;
     }

@@ -2,19 +2,18 @@ package hexlet.code.schemas;
 
 import java.util.Map;
 
-public class MapSchema extends BaseSchema<Map<String, String>> {
-    @Override
-    public final MapSchema required() {
-        super.required();
+public final class MapSchema extends BaseSchema<Map<String, String>> {
+    public MapSchema required() {
+        super.setRequired();
         return this;
     }
 
-    public final MapSchema sizeof(int size) {
+    public MapSchema sizeof(int size) {
         checks.put("sizeof", data -> data.size() == size);
         return this;
     }
 
-    public final void shape(Map<String, BaseSchema<String>> schemas) {
+    public void shape(Map<String, BaseSchema<String>> schemas) {
         checks.put("shape", data -> {
             for (var schema : schemas.entrySet()) {
                 String key = schema.getKey();
